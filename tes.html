@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Différences Anglais Britannique vs Américain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .category-filter {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .category-filter select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .instructions h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: #2c3e50;
+            color: white;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+        }
+        
+        th:hover {
+            background-color: #1a2530;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .audio-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .audio-btn:hover {
+            background: #2980b9;
+            transform: scale(1.1);
+        }
+        
+        .audio-btn.playing {
+            background: #e74c3c;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .ipa {
+            font-family: monospace;
+            font-size: 1.1rem;
+            background: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .notes {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Différences Anglais Britannique vs Américain</h1>
+            <p class="description">Comparez les prononciations et traductions entre l'anglais britannique et américain avec nos fonctionnalités audio intégrées.</p>
+        </header>
+        
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Rechercher un mot...">
+            </div>
+            <div class="category-filter">
+                <select id="categoryFilter">
+                    <option value="all">Toutes les catégories</option>
+                    <option value="pronunciation">Prononciation</option>
+                    <option value="vocabulary">Vocabulaire</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>Comment utiliser ce tableau</h2>
+            <ul>
+                <li>Cliquez sur les icônes <i class="fas fa-volume-up"></i> pour écouter la prononciation des mots</li>
+                <li>Utilisez la barre de recherche pour filtrer les mots spécifiques</li>
+                <li>Utilisez le menu déroulant pour filtrer par type de différence</li>
+                <li>Cliquez sur les en-têtes de colonne pour trier le tableau</li>
+            </ul>
+        </div>
+        
+        <div class="table-container">
+            <table id="comparisonTable">
+                <thead>
+                    <tr>
+                        <th data-sort="french">Français <i class="fas fa-sort"></i></th>
+                        <th data-sort="ukWord">Anglais Britannique <i class="fas fa-sort"></i></th>
+                        <th data-sort="ukPronunciation">Prononciation UK <i class="fas fa-sort"></i></th>
+                        <th>Audio UK</th>
+                        <th data-sort="usWord">Anglais Américain <i class="fas fa-sort"></i></th>
+                        <th data-sort="usPronunciation">Prononciation US <i class="fas fa-sort"></i></th>
+                        <th>Audio US</th>
+                        <th data-sort="category">Catégorie <i class="fas fa-sort"></i></th>
+                        <th data-sort="notes">Notes <i class="fas fa-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les données seront insérées ici par JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        
+        <footer>
+            <p>Réalisé avec ❤️ pour les amoureux des langues | Sources: Cambridge Dictionary, Oxford Learner's Dictionaries</p>
+        </footer>
+    </div>
+
+    <script>
+        // Données pour le tableau
+        const wordData = [
+            {
+                french: "Eau",
+                ukWord: "water",
+                ukPronunciation: "/ˈwɔːtə/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/water-uk.mp3",
+                usWord: "water",
+                usPronunciation: "/ˈwɔːt̬ər/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/water-us.mp3",
+                category: "pronunciation",
+                notes: "\"Flap T\" en américain"
+            },
+            {
+                french: "Herbe",
+                ukWord: "grass",
+                ukPronunciation: "/ɡrɑːs/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/grass-uk.mp3",
+                usWord: "grass",
+                usPronunciation: "/ɡræs/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/grass-us.mp3",
+                category: "pronunciation",
+                notes: "Son /æ/ vs /ɑː/"
+            },
+            {
+                french: "Route",
+                ukWord: "route",
+                ukPronunciation: "/ruːt/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/route-uk.mp3",
+                usWord: "route",
+                usPronunciation: "/raʊt/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/route-us.mp3",
+                category: "pronunciation",
+                notes: "Diphtongue différente"
+            },
+            {
+                french: "Tomate",
+                ukWord: "tomato",
+                ukPronunciation: "/təˈmɑːtəʊ/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/tomato-uk.mp3",
+                usWord: "tomato",
+                usPronunciation: "/təˈmeɪtoʊ/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/tomato-us.mp3",
+                category: "pronunciation",
+                notes: "Voyelle accentuée différente"
+            },
+            {
+                french: "Appartement",
+                ukWord: "flat",
+                ukPronunciation: "/flæt/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/flat-uk.mp3",
+                usWord: "apartment",
+                usPronunciation: "/əˈpɑːrtmənt/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/apartment-us.mp3",
+                category: "vocabulary",
+                notes: "Terme différent pour le même concept"
+            },
+            {
+                french: "Ascenseur",
+                ukWord: "lift",
+                ukPronunciation: "/lɪft/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/lift-uk.mp3",
+                usWord: "elevator",
+                usPronunciation: "/ˈelɪveɪtər/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/elevator-us.mp3",
+                category: "vocabulary",
+                notes: "Terme différent pour le même concept"
+            },
+            {
+                french: "Cookies",
+                ukWord: "biscuit",
+                ukPronunciation: "/ˈbɪskɪt/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/biscuit-uk.mp3",
+                usWord: "cookie",
+                usPronunciation: "/ˈkʊki/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/cookie-us.mp3",
+                category: "vocabulary",
+                notes: "Terme différent pour le même aliment"
+            },
+            {
+                french: "Vacances",
+                ukWord: "holiday",
+                ukPronunciation: "/ˈhɒlədeɪ/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/holiday-uk.mp3",
+                usWord: "vacation",
+                usPronunciation: "/veɪˈkeɪʃən/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/vacation-us.mp3",
+                category: "vocabulary",
+                notes: "Terme différent pour la même notion"
+            },
+            {
+                french: "Chips",
+                ukWord: "crisps",
+                ukPronunciation: "/krɪsps/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/crisps-uk.mp3",
+                usWord: "chips",
+                usPronunciation: "/tʃɪps/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/chips-us.mp3",
+                category: "vocabulary",
+                notes: "UK chips = US fries"
+            },
+            {
+                french: "Either",
+                ukWord: "either",
+                ukPronunciation: "/ˈaɪðə(r)/",
+                ukAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/either-uk.mp3",
+                usWord: "either",
+                usPronunciation: "/ˈiːðər/",
+                usAudio: "https://api.dictionaryapi.dev/media/pronunciations/en/either-us.mp3",
+                category: "pronunciation",
+                notes: "Prononciation radicalement différente"
+            }
+        ];
+
+        // Remplir le tableau avec les données
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableBody = document.querySelector('#comparisonTable tbody');
+            
+            wordData.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.french}</td>
+                    <td>${item.ukWord}</td>
+                    <td><span class="ipa">${item.ukPronunciation}</span></td>
+                    <td><button class="audio-btn" data-audio="${item.ukAudio}"><i class="fas fa-volume-up"></i></button></td>
+                    <td>${item.usWord}</td>
+                    <td><span class="ipa">${item.usPronunciation}</span></td>
+                    <td><button class="audio-btn" data-audio="${item.usAudio}"><i class="fas fa-volume-up"></i></button></td>
+                    <td>${item.category === 'pronunciation' ? 'Prononciation' : 'Vocabulaire'}</td>
+                    <td class="notes">${item.notes}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+            // Configurer les boutons audio
+            setupAudioButtons();
+            
+            // Configurer le tri du tableau
+            setupTableSorting();
+            
+            // Configurer la recherche
+            setupSearch();
+            
+            // Configurer le filtre de catégorie
+            setupCategoryFilter();
+        });
+
+        // Configuration des boutons audio
+        function setupAudioButtons() {
+            const audioButtons = document.querySelectorAll('.audio-btn');
+            let currentlyPlaying = null;
+            
+            audioButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const audioUrl = this.getAttribute('data-audio');
+                    
+                    // Si un audio est déjà en cours de lecture, l'arrêter
+                    if (currentlyPlaying) {
+                        currentlyPlaying.pause();
+                        currentlyPlaying.currentTime = 0;
+                        document.querySelectorAll('.audio-btn.playing').forEach(btn => {
+                            btn.classList.remove('playing');
+                        });
+                    }
+                    
+                    // Si on clique sur le même bouton, ne pas relancer
+                    if (this.classList.contains('playing')) {
+                        this.classList.remove('playing');
+                        currentlyPlaying = null;
+                        return;
+                    }
+                    
+                    // Jouer le nouvel audio
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                    currentlyPlaying = audio;
+                    this.classList.add('playing');
+                    
+                    // Quand l'audio se termine
+                    audio.onended = function() {
+                        button.classList.remove('playing');
+                        currentlyPlaying = null;
+                    };
+                    
+                    // En cas d'erreur
+                    audio.onerror = function() {
+                        button.classList.remove('playing');
+                        alert("Désolé, le fichier audio n'est pas accessible pour le moment.");
+                        currentlyPlaying = null;
+                    };
+                });
+            });
+        }
+
+        // Configuration du tri du tableau
+        function setupTableSorting() {
+            const headers = document.querySelectorAll('th[data-sort]');
+            
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    const sortKey = this.getAttribute('data-sort');
+                    const currentOrder = this.getAttribute('data-order') || 'asc';
+                    const newOrder = currentOrder === 'asc' ? 'desc' : 'asc';
+                    
+                    // Réinitialiser les indicateurs de tri
+                    headers.forEach(h => {
+                        if (h !== header) {
+                            h.removeAttribute('data-order');
+                        }
+                    });
+                    
+                    this.setAttribute('data-order', newOrder);
+                    
+                    // Trier les données
+                    sortTable(sortKey, newOrder);
+                });
+            });
+        }
+
+        // Fonction de tri du tableau
+        function sortTable(key, order) {
+            const tbody = document.querySelector('#comparisonTable tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            rows.sort((a, b) => {
+                let aValue = a.querySelector(`td:nth-child(${getIndex(key)})`).textContent;
+                let bValue = b.querySelector(`td:nth-child(${getIndex(key)})`).textContent;
+                
+                // Pour les colonnes IPA, on utilise l'attribut data-value si disponible
+                if (key === 'ukPronunciation' || key === 'usPronunciation') {
+                    aValue = a.querySelector(`td:nth-child(${getIndex(key)}) span`).textContent;
+                    bValue = b.querySelector(`td:nth-child(${getIndex(key)}) span`).textContent;
+                }
+                
+                if (order === 'asc') {
+                    return aValue.localeCompare(bValue);
+                } else {
+                    return bValue.localeCompare(aValue);
+                }
+            });
+            
+            // Vider et remplir à nouveau le tableau
+            while (tbody.firstChild) {
+                tbody.removeChild(tbody.firstChild);
+            }
+            
+            rows.forEach(row => {
+                tbody.appendChild(row);
+            });
+        }
+
+        // Obtenir l'index de la colonne à partir de la clé
+        function getIndex(key) {
+            const keys = ['french', 'ukWord', 'ukPronunciation', 'ukAudio', 'usWord', 'usPronunciation', 'usAudio', 'category', 'notes'];
+            return keys.indexOf(key) + 1;
+        }
+
+        // Configuration de la recherche
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            
+            searchInput.addEventListener('input', function() {
+                const searchText = this.value.toLowerCase();
+                const rows = document.querySelectorAll('#comparisonTable tbody tr');
+                
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    if (text.includes(searchText)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Configuration du filtre de catégorie
+        function setupCategoryFilter() {
+            const categoryFilter = document.getElementById('categoryFilter');
+            
+            categoryFilter.addEventListener('change', function() {
+                const selectedCategory = this.value;
+                const rows = document.querySelectorAll('#comparisonTable tbody tr');
+                
+                rows.forEach(row => {
+                    if (selectedCategory === 'all') {
+                        row.style.display = '';
+                    } else {
+                        const category = row.querySelector('td:nth-child(8)').textContent.toLowerCase();
+                        if (category.includes(selectedCategory)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
